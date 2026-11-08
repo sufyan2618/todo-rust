@@ -1,0 +1,12 @@
+# Optional local development: reuse an authenticated host AWS profile.
+services:
+  server:
+    environment:
+      AWS_PROFILE: default
+    volumes:
+      - type: bind
+        source: ~/.aws
+        target: /home/app/.aws
+        read_only: true
+        bind:
+          create_host_path: false

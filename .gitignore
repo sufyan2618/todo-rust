@@ -1,0 +1,23 @@
+**/.env
+**/.env.*
+!**/.env.example
+client/node_modules/
+client/dist/
+client/*.tsbuildinfo
+server/target/
+
+# Actual deployment settings stay on your laptop/EC2.
+server/config.json
+server/config.*.json
+!server/config.example.json
+deploy/iam-policy.json
+compose.override.yaml
+compose.override.yml
+
+# AWS credentials and private keys must never be published.
+.aws/
+*.pem
+*.key
+*.p12
+*.pfx
+!server/certs/global-bundle.pem

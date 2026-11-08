@@ -1,0 +1,10 @@
+target
+.env
+.env.*
+.git
+config.json
+config.*.json
+.aws
+*.key
+*.pem
+!certs/global-bundle.pem
