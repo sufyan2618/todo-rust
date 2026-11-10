@@ -1,0 +1,9 @@
+region = "us-east-1"
+ami_id = "ami-0b56af99f64ec815b"
+project = "todo"
+# The AMI must contain Docker Compose and these prebuilt app images.
+server_image = "todo-rust-server:latest"
+client_image = "todo-rust-client:latest"
+# For HTTPS, supply a validated ACM cert and configure your DNS to the ALB.
+# certificate_arn = "arn:aws:acm:us-east-1:ACCOUNT:certificate/ID"
+# app_origin = "https://todo.example.com"

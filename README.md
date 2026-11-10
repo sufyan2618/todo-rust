@@ -2,6 +2,10 @@
 
 Axum + SQLx/PostgreSQL API and React/TypeScript + Zustand + Axios client. All application secrets come directly from AWS Secrets Manager at server startup. No `.env` files or environment-variable fallback for database/JWT secrets.
 
+## Terraform deployment
+
+See [infra/README.md](infra/README.md) for the complete ALB → private EC2 Auto Scaling Group → RDS stack using the supplied AMI. Terraform generates the runtime config on EC2. It creates a new database and networking; existing console-created resources are not adopted automatically.
+
 ## 1. Reuse your existing RDS secret
 
 Set `rds_secret_id` in `server/config.json` to your existing secret's full ARN (or name). The minimum supported JSON is:

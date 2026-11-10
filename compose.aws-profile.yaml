@@ -2,7 +2,7 @@
 services:
   server:
     environment:
-      AWS_PROFILE: default
+      AWS_PROFILE: 
     volumes:
       - type: bind
         source: ~/.aws

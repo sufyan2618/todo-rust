@@ -3,6 +3,6 @@
   "rds_secret_id": "YOUR_EXISTING_RDS_SECRET_ARN",
   "app_secret_id": "todo/production/app",
   "port": 8080,
-  "client_origin": "http://YOUR_EC2_PUBLIC_IP",
+  "client_origin": "http://YOUR_ALB_DNS_NAME",
   "rds_ca_bundle": "certs/global-bundle.pem"
 }
