@@ -25,8 +25,8 @@ variable "db_name" { default = "tododb" }
 variable "db_username" { default = "todoadmin" }
 variable "db_engine_version" { default = "16" }
 variable "db_instance_class" { default = "db.t4g.micro" }
-variable "db_multi_az" { default = true }
-variable "db_backup_retention" { default = 7 }
+variable "db_multi_az" { default = false }
+variable "db_backup_retention" { default = 1 }
 variable "certificate_arn" {
   type        = string
   default     = ""
@@ -45,7 +45,7 @@ variable "server_image" { default = "todo-rust-server:latest" }
 variable "client_image" { default = "todo-rust-client:latest" }
 variable "waf_count_mode" { default = true }
 variable "waf_rate_limit" { default = 500 }
-variable "deletion_protection" { default = true }
+variable "deletion_protection" { default = false }
 variable "kms_key_arns" {
   type        = list(string)
   default     = []

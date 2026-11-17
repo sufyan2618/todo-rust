@@ -9,12 +9,12 @@ This is a **new stack**, matching the app and the supplied reference. It does no
 - Internet-facing ALB targeting **Nginx port 80**, with **`/health`** proxied to Rust and PostgreSQL. Only status 200 passes.
 - Optional ACM HTTPS listener with HTTP-to-HTTPS redirect. Existing validated certificate and DNS are supplied separately; Terraform does not own your domain.
 - Launch template and Auto Scaling Group (2 instances by default), rolling updates, ALB health replacement, request-count target tracking.
-- Encrypted PostgreSQL RDS, Multi-AZ by default, 7-day backups, isolated networking, deletion protection, and final snapshot on deletion.
+- Encrypted PostgreSQL RDS, Single-AZ `db.t4g.micro` by default, 20 GiB `gp2` storage, one-day backup retention, isolated networking, deletion protection, and final snapshot on deletion.
 - RDS-managed master credentials in Secrets Manager plus a generated 64-character JWT/application secret. EC2 role can read both secrets; SSM provides administration.
 - Regional WAF: managed common, SQL injection, and IP reputation groups initially in count mode; IP rate limiting blocks above the configured limit.
 - Separate S3-backend bootstrap with encryption, versioning, public-access blocking, destruction protection, and native state locking.
 
-Paid resources include two NAT gateways, ALB, WAF, EC2, and Multi-AZ RDS. Review the plan before provisioning.
+RDS defaults use a Free Tier–eligible instance class. Actual coverage depends on your account plan and credits. NAT gateways, ALB, WAF, and EC2 can still incur charges. Review the plan before provisioning.
 
 ## AMI contract — check before applying
 
